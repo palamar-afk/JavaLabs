@@ -1,6 +1,5 @@
 package test1.com.company;
 
-import java.util.Collection;
 import java.util.Iterator;
 
 public class LinkedList<T> implements List<T> {
@@ -65,30 +64,30 @@ public class LinkedList<T> implements List<T> {
 
     private class IteratorImpl implements Iterator<T> {
         Node<T> prevNode = null;
-        Node<T> cursorNode = null;
+        Node<T> currentNode = null;
 
         public boolean hasNext() {
-            if (cursorNode == null)
+            if (currentNode == null)
                 return firstNode != null;
             else
-                return cursorNode.nextElement != null;
+                return currentNode.nextElement != null;
         }
 
         public T next() {
-            if (cursorNode == null)
-                cursorNode = firstNode;
+            if (currentNode == null)
+                currentNode = firstNode;
             else {
-                prevNode = cursorNode;
-                cursorNode = cursorNode.nextElement;
+                prevNode = currentNode;
+                currentNode = currentNode.nextElement;
             }
-            return cursorNode.element;
+            return currentNode.element;
         }
 
         public void remove() {
             if (prevNode == null) {
                 firstNode = firstNode.nextElement;
             } else
-                prevNode.nextElement = cursorNode.nextElement;
+                prevNode.nextElement = currentNode.nextElement;
         }
     }
 }

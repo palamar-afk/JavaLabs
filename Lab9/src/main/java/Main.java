@@ -21,6 +21,7 @@ public class Main {
         Random random = new Random();
         for (int i = 0; i < count; i++){
             Menu menu = new Menu();
+            menu.SetIdOfDish(i);
             menu.SetNameOfDish("The " + i+1 + "th dish is" + random.nextInt(1000, 3000));
             menu.SetPriceOfDish(random.nextDouble(500, 9950));
             menu.SetWeightOfDish(random.nextDouble(0, 1000));

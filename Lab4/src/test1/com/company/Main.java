@@ -6,14 +6,15 @@ import java.util.function.IntPredicate;
 public class Main {
 
     private static final int spamNumber = 9;
+    private int a = 5;
     public static void main(String[] args)
     {
         int[] arr = new int[]{5,3,2,0,1,4,4,7,12,3};
-        //FindUniqueNumber(BuildBigArray());
+        FindUniqueNumber(BuildBigArray());
         System.out.println(Arrays.toString(mySort(arr, x -> x % 2 != 0 || x == 0)));
     }
 
-    private static int[] BuildBigArray(){
+    private static int[] BuildBigArray() {
         Random random = new Random();
         int sizeOfArray = random.nextInt(10, 10000);
         int uniqueNumber =  random.nextInt(0, sizeOfArray);

@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Calculate();
-        //FillArrayFromMiddle(15);
+        Calculate();
+        FillArrayFromMiddle(15);
         Run();
     }
 
@@ -31,6 +31,8 @@ public class Main {
 
     private static void FillArrayFromMiddle(int size)
     {
+        if(size <= 0 )
+            return;
         int[] arr = new int[size];
 
         int middle= size/2;
